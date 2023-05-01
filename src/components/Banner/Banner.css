@@ -1,0 +1,11 @@
+.banner-container {
+  background-image: url("../../assets/volodymyr-proskurovskyi-XhS0YkpQI2M-unsplash.jpg"),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-position: center;
+  width: 100%;
+  height: calc(100vh - 62px);
+}

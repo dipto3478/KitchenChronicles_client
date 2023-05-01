@@ -8,16 +8,16 @@ const MenuBar = () => {
     <div>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home" className="fs-4">
-            Taste Adventures
+          <Navbar.Brand href="/" className="fs-4 fw-bold">
+            Kitchen Chronicles
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto d-flex gap-2 fs-5 ">
+            <Nav className="ms-auto d-flex gap-3  fw-semibold fs-5 ">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? "active" : "text-decoration-none"
+                  isActive ? "active" : "text-decoration-none text-dark"
                 }
               >
                 Home
@@ -26,7 +26,7 @@ const MenuBar = () => {
               <NavLink
                 to="/blog"
                 className={({ isActive }) =>
-                  isActive ? "active" : "text-decoration-none"
+                  isActive ? "active" : "text-decoration-none text-dark"
                 }
               >
                 Blog
@@ -35,7 +35,7 @@ const MenuBar = () => {
               <NavLink
                 to="/login"
                 className={({ isActive }) =>
-                  isActive ? "active" : "text-decoration-none"
+                  isActive ? "active" : "text-decoration-none text-dark"
                 }
               >
                 Login

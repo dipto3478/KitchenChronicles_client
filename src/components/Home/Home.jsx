@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
   const chefsData = useLoaderData();
+  // console.log(chefsData);
   return (
     <div>
       <Banner />

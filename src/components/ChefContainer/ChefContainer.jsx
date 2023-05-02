@@ -7,7 +7,7 @@ const ChefContainer = ({ chefsData }) => {
       <h3 className="text-center my-5">Chefs Section</h3>
       <article className="row">
         {chefsData.map((chef) => (
-          <ChefCard key={chef.id} chef={chef}></ChefCard>
+          <ChefCard key={chef.chef.id} chef={chef}></ChefCard>
         ))}
       </article>
     </section>

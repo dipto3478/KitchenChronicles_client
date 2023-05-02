@@ -6,7 +6,14 @@ const PrivateRouter = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   const location = useLocation();
   if (loading) {
-    return <h1>Loading.............</h1>;
+    return (
+      <div
+        style={{ height: "calc(100vh - 62px)" }}
+        className="d-flex align-items-center justify-content-center"
+      >
+        <h1 className="fw-bolder display-6">Loading.......🔃🔃🔃</h1>
+      </div>
+    );
   }
   if (user) {
     return children;

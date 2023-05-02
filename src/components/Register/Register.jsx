@@ -1,12 +1,13 @@
 import React, { useContext, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const [error, setError] = useState("");
+  const navigate = useNavigate();
   const { createUser } = useContext(AuthContext);
   const handleRegister = (event) => {
     event.preventDefault();
@@ -26,6 +27,7 @@ const Register = () => {
           setError("");
           form.reset();
           toast.success("✌successfully Register👍");
+          navigate("/login");
         })
         .catch((error) => {
           console.log(error.message);

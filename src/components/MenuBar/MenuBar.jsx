@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import "./MenuBar.css";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
 
 const MenuBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -51,8 +52,15 @@ const MenuBar = () => {
                 </NavLink>
               )}
               {user && (
-                <div>
-                  <span>{user.email}</span>
+                <div className="d-flex flex-column flex-md-row align-items-md-center gap-2">
+                  <span title={user?.displayName}>
+                    <img
+                      style={{ width: "40px" }}
+                      className="rounded-circle"
+                      src={user?.photoURL ? user?.photoURL : <FaUserCircle />}
+                      alt="user photo"
+                    />
+                  </span>
                   <button onClick={handleLogOut} className="btn btn-dark">
                     LogOut
                   </button>

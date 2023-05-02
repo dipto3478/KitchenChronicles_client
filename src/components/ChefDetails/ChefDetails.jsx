@@ -19,7 +19,7 @@ const ChefDetails = () => {
   } = chef.chef;
   return (
     <section className="container py-5">
-      <article className="row d-flex align-items-center">
+      <article className="row d-flex align-items-center justify-content-center gap-5 gap-md-0">
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <img
             style={{ height: "500px" }}
@@ -42,14 +42,16 @@ const ChefDetails = () => {
           </p>
         </div>
       </article>
-      <h4 className="fw-bold text-center text-decoration-underline my-5">
-        Items Recipe
-      </h4>
-      <article className="row">
-        {recipes.map((item) => (
-          <Recipe key={item.r_id} item={item}></Recipe>
-        ))}
-      </article>
+      <div className="container">
+        <h4 className="fw-bold text-center text-decoration-underline my-5">
+          Items Recipe
+        </h4>
+        <article className="row d-flex align-items-center">
+          {recipes.map((item) => (
+            <Recipe key={item.r_id} item={item}></Recipe>
+          ))}
+        </article>
+      </div>
     </section>
   );
 };

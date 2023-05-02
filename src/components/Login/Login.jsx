@@ -7,7 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [error, setError] = useState("");
-  const { loginUser } = useContext(AuthContext);
+  const { loginUser, loginWithGoogle, loginWithGithub } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -33,6 +34,30 @@ const Login = () => {
           setError(error);
         });
     }
+  };
+
+  const handleGoogle = () => {
+    loginWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+        navigate(from, { replace: true });
+        toast.success("👍successfully Login✌");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGithub = () => {
+    loginWithGithub()
+      .then((result) => {
+        console.log(result.user);
+        navigate(from, { replace: true });
+        toast.success("👍successfully Login✌");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -63,8 +88,8 @@ const Login = () => {
         </Button>
         <p>{error}</p>
         <div className="my-3 d-flex gap-2">
-          <Button>Login With Google</Button>
-          <Button>Login With Github</Button>
+          <Button onClick={handleGoogle}>Login With Google</Button>
+          <Button onClick={handleGithub}>Login With Github</Button>
         </div>
       </Form>
     </div>

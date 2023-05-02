@@ -10,6 +10,7 @@ import Blog from "./components/Blog/Blog.jsx";
 import ChefDetails from "./components/ChefDetails/ChefDetails.jsx";
 import { ToastContainer } from "react-toastify";
 import AuthProvider from "./components/AuthProvider/AuthProvider.jsx";
+import PrivateRouter from "./components/PrivateRouter/PrivateRouter.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/chefs/:id",
-        element: <ChefDetails />,
+        element: (
+          <PrivateRouter>
+            <ChefDetails />
+          </PrivateRouter>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/chefs/${params.id}`),
       },

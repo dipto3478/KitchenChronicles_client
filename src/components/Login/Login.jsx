@@ -12,13 +12,16 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-    loginUser(email, password)
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if ((email, password)) {
+      loginUser(email, password)
+        .then((result) => {
+          console.log(result);
+          form.reset();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
 
   return (

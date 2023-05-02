@@ -5,8 +5,13 @@ import "./MenuBar.css";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const MenuBar = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user);
+  const { user, logOut } = useContext(AuthContext);
+  // console.log(user);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -48,7 +53,9 @@ const MenuBar = () => {
               {user && (
                 <div>
                   <span>{user.email}</span>
-                  <button className="btn btn-dark">LogOut</button>
+                  <button onClick={handleLogOut} className="btn btn-dark">
+                    LogOut
+                  </button>
                 </div>
               )}
             </Nav>

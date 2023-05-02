@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Register = () => {
+  const [error, setError] = useState("");
+  const { createUser } = useContext(AuthContext);
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -10,6 +14,20 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, photo, email, password);
+    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
+      setError("Minimum eight characters, at least one letter and one number:");
+      return;
+    } else if ((name, photo, email, password)) {
+      createUser(email, password)
+        .then((result) => {
+          console.log(result.user);
+          setError("");
+          form.reset();
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    }
   };
   return (
     <div
@@ -37,6 +55,10 @@ const Register = () => {
             name="password"
             placeholder="Password"
           />
+          <p className="text-danger">{error}</p>
+          <p>
+            Already have an Accounts? <Link to="/login">Please Login</Link>
+          </p>
         </Form.Group>
 
         <Button className="w-100" variant="primary" type="submit">

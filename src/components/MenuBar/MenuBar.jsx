@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./MenuBar.css";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const MenuBar = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -32,14 +35,22 @@ const MenuBar = () => {
                 Blog
               </NavLink>
 
-              <NavLink
-                to="/login"
-                className={({ isActive }) =>
-                  isActive ? "active" : "text-decoration-none text-dark"
-                }
-              >
-                Login
-              </NavLink>
+              {!user && (
+                <NavLink
+                  to="/login"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "text-decoration-none text-dark"
+                  }
+                >
+                  Login
+                </NavLink>
+              )}
+              {user && (
+                <div>
+                  <span>{user.email}</span>
+                  <button className="btn btn-dark">LogOut</button>
+                </div>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

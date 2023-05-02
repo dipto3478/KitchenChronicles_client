@@ -11,11 +11,13 @@ import ChefDetails from "./components/ChefDetails/ChefDetails.jsx";
 import { ToastContainer } from "react-toastify";
 import AuthProvider from "./components/AuthProvider/AuthProvider.jsx";
 import PrivateRouter from "./components/PrivateRouter/PrivateRouter.jsx";
+import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

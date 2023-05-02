@@ -8,7 +8,6 @@ const ChefDetails = () => {
   // console.log(chef.chef);
 
   const {
-    id,
     chefPicture,
     chefName,
     yearsOfExperience,

@@ -3,14 +3,14 @@ import ChefCard from "../ChefCard/ChefCard";
 
 const ChefContainer = ({ chefsData }) => {
   return (
-    <>
-      <h3>Chefs Section</h3>
-      <section>
+    <section className="container  my-5">
+      <h3 className="text-center my-5">Chefs Section</h3>
+      <article className="row">
         {chefsData.map((chef) => (
-          <ChefCard></ChefCard>
+          <ChefCard key={chef.id} chef={chef}></ChefCard>
         ))}
-      </section>
-    </>
+      </article>
+    </section>
   );
 };
 

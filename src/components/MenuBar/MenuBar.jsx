@@ -13,7 +13,7 @@ const MenuBar = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto d-flex gap-3  fw-semibold fs-5 ">
+            <Nav className="ms-auto d-flex gap-3  fw-semibold fs-6 ">
               <NavLink
                 to="/"
                 className={({ isActive }) =>

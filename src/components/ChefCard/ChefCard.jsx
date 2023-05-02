@@ -20,7 +20,10 @@ const ChefCard = ({ chef }) => {
             </span>
           </p>
           <Button className="w-100" variant="primary">
-            <Link className="text-light" to={`/chefs/${id}`}>
+            <Link
+              className="text-light fw-bold text-decoration-none"
+              to={`/chefs/${id}`}
+            >
               View Recipes
             </Link>
           </Button>

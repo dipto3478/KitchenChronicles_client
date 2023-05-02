@@ -8,6 +8,7 @@ import Login from "./components/Login/Login.jsx";
 import Register from "./components/Register/Register.jsx";
 import Blog from "./components/Blog/Blog.jsx";
 import ChefDetails from "./components/ChefDetails/ChefDetails.jsx";
+import { ToastContainer } from "react-toastify";
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,10 @@ const router = createBrowserRouter([
         element: <Blog />,
       },
       {
-        path: "/chefs",
+        path: "/chefs/:id",
         element: <ChefDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/chefs/${params.id}`),
       },
     ],
   },
@@ -42,5 +45,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <ToastContainer />
   </React.StrictMode>
 );

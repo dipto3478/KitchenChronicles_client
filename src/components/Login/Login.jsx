@@ -25,6 +25,10 @@ const Login = () => {
         <Button className="w-100" variant="primary" type="submit">
           Login
         </Button>
+        <div className="my-3 d-flex gap-2">
+          <Button>Login With Google</Button>
+          <Button>Login With Github</Button>
+        </div>
       </Form>
     </div>
   );

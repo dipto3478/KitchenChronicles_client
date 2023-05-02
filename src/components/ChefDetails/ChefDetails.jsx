@@ -1,11 +1,12 @@
 import React from "react";
 import { AiFillLike } from "react-icons/ai";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Recipe from "../Recipe/Recipe";
 
 const ChefDetails = () => {
   const chef = useLoaderData();
-  console.log(chef.chef);
+  // console.log(chef.chef);
+
   const {
     id,
     chefPicture,
@@ -46,7 +47,7 @@ const ChefDetails = () => {
       </h4>
       <article className="row">
         {recipes.map((item) => (
-          <Recipe key={id} item={item}></Recipe>
+          <Recipe key={item.r_id} item={item}></Recipe>
         ))}
       </article>
     </section>

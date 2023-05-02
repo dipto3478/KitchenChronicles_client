@@ -1,10 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const [error, setError] = useState("");
   const { loginUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -17,9 +24,13 @@ const Login = () => {
         .then((result) => {
           console.log(result);
           form.reset();
+          navigate(from, { replace: true });
+          toast.success("👍successfully Login✌");
+          setError("");
         })
         .catch((error) => {
           console.log(error);
+          setError(error);
         });
     }
   };
@@ -50,6 +61,7 @@ const Login = () => {
         <Button className="w-100" variant="primary" type="submit">
           Login
         </Button>
+        <p>{error}</p>
         <div className="my-3 d-flex gap-2">
           <Button>Login With Google</Button>
           <Button>Login With Github</Button>

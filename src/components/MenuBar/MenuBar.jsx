@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./MenuBar.css";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
@@ -16,9 +16,9 @@ const MenuBar = () => {
     <div>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="/" className="fs-4 fw-bold">
+          <Link to="/" className="fs-4 fw-bold text-decoration-none text-dark">
             Kitchen Chronicles
-          </Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto d-flex gap-3  fw-semibold fs-6 ">

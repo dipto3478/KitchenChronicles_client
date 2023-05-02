@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -23,6 +25,7 @@ const Register = () => {
           console.log(result.user);
           setError("");
           form.reset();
+          toast.success("✌successfully Register👍");
         })
         .catch((error) => {
           console.log(error.message);

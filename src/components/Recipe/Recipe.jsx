@@ -11,7 +11,7 @@ const Recipe = ({ item }) => {
     setDisBtn(true);
   };
   const { cookingMethod, img, ingredients, name, rating } = item;
-  console.log(item);
+  // console.log(item);
   return (
     <div className="col-12 col-md-6 col-lg-4 mb-3">
       <Card style={{ width: "18rem" }}>

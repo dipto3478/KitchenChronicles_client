@@ -14,8 +14,8 @@ const Recipe = ({ item }) => {
   // console.log(item);
   return (
     <div className="col-12 col-md-6 col-lg-4 mb-3">
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={img} />
+      <Card>
+        <Card.Img style={{ height: "300px" }} variant="top" src={img} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>

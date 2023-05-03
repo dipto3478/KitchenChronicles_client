@@ -2,7 +2,7 @@ import React from "react";
 import { AiFillLike } from "react-icons/ai";
 import { useLoaderData } from "react-router-dom";
 import Recipe from "../Recipe/Recipe";
-
+import LazyLoad from "react-lazy-load";
 const ChefDetails = () => {
   const chef = useLoaderData();
   // console.log(chef.chef);
@@ -20,12 +20,14 @@ const ChefDetails = () => {
     <section className="container py-5">
       <article className="row d-flex align-items-center justify-content-center gap-5 gap-md-0">
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <img
-            style={{ height: "500px" }}
-            className="img-fluid  "
-            src={chefPicture}
-            alt={chefName}
-          />
+          <LazyLoad height={500}>
+            <img
+              style={{ height: "500px" }}
+              className="img-fluid  "
+              src={chefPicture}
+              alt={chefName}
+            />
+          </LazyLoad>
         </div>
         <div className="col-12 col-md-6">
           <h3>Name: {chefName}</h3>
@@ -47,7 +49,7 @@ const ChefDetails = () => {
         </h4>
         <article className="row d-flex align-items-center">
           {recipes.map((item) => (
-            <Recipe key={item.r_id} item={item}></Recipe>
+            <Recipe key={Math.random(item.r_id)} item={item}></Recipe>
           ))}
         </article>
       </div>

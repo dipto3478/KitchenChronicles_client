@@ -24,7 +24,7 @@ const Footer = () => {
           </div>
         </article>
       </section>
-      <section className="container ">
+      <section style={{ borderTop: "2px solid white" }} className="container  ">
         <article className="row py-3 ">
           <div className="col-12 col-md-6">
             <p> Copyright 2023. Designed by DD Designs.</p>

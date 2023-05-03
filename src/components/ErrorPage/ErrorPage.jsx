@@ -1,5 +1,5 @@
 import React from "react";
-import { useRouteError } from "react-router-dom";
+import { Link, useRouteError } from "react-router-dom";
 import image from "../../assets/error.jpg";
 
 const ErrorPage = () => {
@@ -19,6 +19,11 @@ const ErrorPage = () => {
           </h3>
           <p>{error?.message}</p>
           <p>Sorry, an unexpected error has occurred.</p>
+          <button className="btn btn-primary">
+            <Link className="text-decoration-none text-white" to="/">
+              Go Back To Home
+            </Link>
+          </button>
         </div>
         <div className="col-12 col-md-6">
           <img className="img-fluid" src={image} alt="error img" />

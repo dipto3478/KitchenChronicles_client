@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-dark text-light">
       <section className="container py-5">
         <article className="d-flex flex-column justify-content-center align-items-center">
-          <h3>Contact us</h3>
+          <h3 className="text-center fw-bolder my-5">Contact us</h3>
           <p>
             If you want to know more about our latest cake parties and special
             discount offers, please subscribe below form and we’ll send you a

@@ -17,8 +17,8 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, photo, email, password);
-    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
-      setError("Minimum eight characters, at least one letter and one number:");
+    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(password)) {
+      setError("Minimum six characters, at least one letter and one number:");
       return;
     } else if ((name, photo, email, password)) {
       createUser(email, password)

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 const PrivateRouter = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -11,7 +12,12 @@ const PrivateRouter = ({ children }) => {
         style={{ height: "calc(100vh - 62px)" }}
         className="d-flex align-items-center justify-content-center"
       >
-        <h1 className="fw-bolder display-6">Loading.......🔃🔃🔃</h1>
+        <Spinner animation="border" variant="primary" />
+        <Spinner animation="border" variant="secondary" />
+        <Spinner animation="border" variant="success" />
+        <Spinner animation="border" variant="danger" />
+        <Spinner animation="border" variant="warning" />
+        <Spinner animation="border" variant="info" />
       </div>
     );
   }

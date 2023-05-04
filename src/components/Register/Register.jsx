@@ -39,7 +39,7 @@ const Register = () => {
       style={{ height: "calc(100vh - 62px)" }}
       className="container  d-flex align-items-center justify-content-center"
     >
-      <Form onSubmit={handleRegister} className="w-25">
+      <Form onSubmit={handleRegister} className="w-75">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" name="name" placeholder="Enter name" />

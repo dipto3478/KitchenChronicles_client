@@ -65,7 +65,7 @@ const Login = () => {
       style={{ height: "calc(100vh - 62px)" }}
       className="container  d-flex align-items-center justify-content-center"
     >
-      <Form onSubmit={handleLogin} className="w-25">
+      <Form onSubmit={handleLogin} className="w-75">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" name="email" placeholder="Enter email" />
